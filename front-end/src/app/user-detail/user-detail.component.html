@@ -1,0 +1,28 @@
+<div class='result-box costum-box'>
+    <h1>Quiz Result {{user.lastName}}</h1>
+    <table>
+        <tr>
+            <td>Total Question</td>
+            <td><span class="total-question">{{user.totalQuestion}}</span></td>
+        </tr>
+        <tr>
+            <td>Correcte</td>
+            <td><span class="total-correct">{{user.correct}}</span></td>
+        </tr>
+        <tr>
+            <td>Pourcentage</td>
+            <td><span class="percentage">{{user.pourcentage}}%</span></td>
+        </tr>
+        <tr>
+            <td>Votre score total</td>
+            <td><span class="total-score">{{user.correct}}/{{user.totalQuestion}}</span></td>
+        </tr>
+        <tr>
+            <td>Miss Click</td>
+            <td><span class="total-score">{{user.missclick}}</span></td>
+        </tr>
+    </table>
+    <div [routerLink]="['/user-list']">
+        <button type="button" class="btn">retour</button>
+    </div>
+</div>

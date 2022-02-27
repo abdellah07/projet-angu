@@ -1,0 +1,22 @@
+.success {
+  border: 3px green solid;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 10px;
+
+}
+
+.fond-carré {
+  width: 3cm;
+  height: 3cm;
+  border-radius: 10px;
+  //background-image: url('fond océan.PNG');
+  position: relative;
+}
+
+.fail {
+  border: 3px red solid;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 10px;
+}

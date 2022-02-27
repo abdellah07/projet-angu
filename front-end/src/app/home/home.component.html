@@ -1,0 +1,22 @@
+<!--
+    <section class="home">
+        <div class="homecontent">
+            <h1>Starter</h1>
+            <div id="barContainer">
+                <a class="bar" (click)="admin()" [routerLink]="['/quiz-list']">Admin</a>
+                <a class="bar" (click)="parkinson()" [routerLink]="['/quiz-list']">Parkinson</a>
+                <a class="bar" (click)="tetra()" [routerLink]="['/quiz-list']">Tétraplégique</a>
+            </div>
+        </div>
+    </section>
+-->
+
+
+
+<section class="home">
+  <div class="homecontent">
+    <div class="users">
+        <app-home-user *ngFor="let u of users" [user]="u"></app-home-user>
+    </div>
+  </div>
+</section>

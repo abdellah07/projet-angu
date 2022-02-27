@@ -1,0 +1,45 @@
+<div class="row" style="justify-content: space-around;">
+  <div class="col-sm-7 col-sm-offset-2 card">
+    <h2 style="text-align: center;">Création d'un nouveau utilisateur</h2>
+    <form class="user-form" [formGroup]="userForm">
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input
+          class="form-control"
+          type="text"
+          id="firstName"
+          [formControlName]="'firstName'"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input
+          class="form-control"
+          type="text"
+          id="lastName"
+          [formControlName]="'lastName'"
+          class="form-control"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fonctionality"> fonctionalité </label>
+        <select
+          id="fonctionality"
+          class="form-control"
+          name="fonctionality"
+          [formControlName]="'auth'"
+          required
+        >
+          <option value="3" selected>Tetraplegique</option>
+          <option value="2">Parkinson</option>
+          <option value="1">Admin</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-info" (click)="addUser()">
+        Créer
+      </button>
+    </form>
+  </div>
+</div>

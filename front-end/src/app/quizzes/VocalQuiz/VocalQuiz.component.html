@@ -1,0 +1,109 @@
+<div id="QuizComponent">
+    
+    <div class="BoxDeQuestion" *ngIf="!isEnd()">
+        <h4 class="bold" style="color: rgb(255, 255, 255); margin-top: 5px;">
+            {{quiz.name}} :
+            <span>{{quiz.theme}}</span>
+        </h4>
+        <h4>Question : <span>{{quiz.questions[questionIndex].label}}</span></h4>
+        <div id="answers">
+            <ul *ngFor="let answer of quiz.questions[questionIndex].answers;let i = index">
+                <li [id]="'nombre'+i"><span class="nbr">numéro {{i}}</span>
+                        <span>{{quiz.questions[questionIndex].answers[i].value}}</span>
+                </li>
+            </ul>
+        </div>
+        <h4 style="text-align: center;color: white; margin-top: 5px;">
+            vous avez dit {{service.text}}
+        </h4>
+        <!--<div>
+            <h3 class="text-danger">Il suffit de lire le numero de la réponse</h3>
+        </div>
+        <div id="microphone">
+            <img src="https://image.flaticon.com/icons/png/512/88/88634.png" alt="Microphone" >
+            <span id="sound"></span>
+        </div>-->
+        <div class="alert alert-info" id="alert" style="text-align: center; visibility:visible;">
+            <strong>Info!  Veuillez attendre l'ouverture de votre microphone après 10 secondes pour insérer votre réponse.</strong>
+        </div>
+        <div class="alert alert-info" id="alert-bis" style="text-align: center; visibility:hidden;">
+            <strong>Parlez maintenant !</strong>
+        </div>
+        <main>
+            <section>             
+                <div class="voice_wave" id="sound">
+                    <!--<h1><span  id="timerMins">00</span>:<span  id="timerSeconds">00</span>:<span  id="timerTens">00</span></h1>-->
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div *ngIf="isEnd()" class='result-box costum-box'>
+        <h1>Quiz Result</h1>
+        <table>
+            <tr>
+                <td>Total Question</td>
+                <td><span class="total-question">{{quiz.questions.length}}</span></td>
+            </tr>
+            <tr>
+                <td>Correcte</td>
+                <td><span class="total-correct">{{CorrectAnsw}}</span></td>
+            </tr>
+            <tr>
+                <td>Pourcentage</td>
+                <td><span class="percentage">{{pourcentage}}%</span></td>
+            </tr>
+            <tr>
+                <td>Votre score total</td>
+                <td><span class="total-score">{{CorrectAnsw}}/{{quiz.questions.length}}</span></td>
+            </tr>
+        </table>
+        <div [routerLink]="['/quiz-list']" (click)="validate()">
+            <button type="button" class="btn" (click)="increment()">retour</button>
+        </div>
+    </div>
+</div>

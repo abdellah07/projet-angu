@@ -1,0 +1,26 @@
+<div class="uContainer" (click)="setAuth()" [routerLink]="['/quiz-list']">
+  <div class="image">
+    <img
+      src="../../assets/images/admin.png"
+      alt="admin Image"
+      *ngIf="isAdmin()"
+    />
+    <img
+      src="../../assets/images/parkinson.png"
+      alt="parkinson Image"
+      *ngIf="isParkinson()"
+    />
+    <img
+      src="../../assets/images/tetra.png"
+      alt="tetra Image"
+      *ngIf="isTetra()"
+    />
+  </div>
+    <div class="nameContainer">
+      <span class="material-icons" *ngIf="isAdmin()">
+        admin_panel_settings
+      </span>
+      <span class="material-icons" *ngIf="!isAdmin()"> person </span>
+      <span class="text">{{ user.firstName }} {{ user.lastName }}</span>
+    </div>
+</div>

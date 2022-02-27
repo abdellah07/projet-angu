@@ -1,0 +1,99 @@
+<!--
+<div class="all" style="text-align: center;">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div>
+              <h2 class="section-heading">{{indexQuiz+1}}</h2>
+              <p>{{quiz.questions[indexQuiz].label}}</p>
+            </div>
+          </div>
+          <img id="myImg" src="{{quiz.questions[indexQuiz].image}}" alt="Snow" class="zoom">
+          <div class="box">
+            <div *ngFor="let answer of quiz.questions[indexQuiz].answers">
+              <p data-aos="fade-right" data-aos-delay="200" data-aos-offset="-500">
+                <a class="btn btn-outline-white" style="text-align: right;" (click)="increment()">{{answer.value}}</a>
+              </p>
+            </div>
+            <a *ngIf="isEnd()" [routerLink]="['/home']">Back</a>
+          </div>
+        </div>
+</div>
+-->
+<!--[ngClass]="{ 'quiz-box costum-box hide': !hide(), 'quiz-box costum-box': hide()) }"-->
+<div *ngIf="!isEnd()" id="100" class='quiz-box costum-box' (click)="incrementMiss($event.target)">
+  <div class="question-number">
+    Question {{indexQuiz + 1}} sur {{quiz.questions.length}}
+  </div>
+  <div class="question-text">
+    {{quiz.questions[indexQuiz].label}}
+  </div>
+  <img class="center-div question-image" src="{{quiz.questions[indexQuiz].image}}">
+  <div *ngFor="let answer of quiz.questions[indexQuiz].answers ;let isEven = even;let i = index;">
+    <div class="row justify-content-between" *ngIf="isEven">
+      <button (click)="incrementCorrect($event.target)" (click)="selectedQuestion($event.target)"  id="answer" type="button" [style.height.px]="case" class="col btn btn-primary boubou" data-toggle="button" aria-pressed="false"
+              autocomplete="off">{{quiz.questions[indexQuiz].answers[i].value}}</button>
+      <button (click)="incrementCorrect($event.target)" (click)="selectedQuestion($event.target)" id="answer" type="button" [style.height.px]="case" class="col btn btn-primary boubou" data-toggle="button" aria-pressed="false"
+              autocomplete="off"
+              *ngIf="i+1<quiz.questions[indexQuiz].answers.length">{{quiz.questions[indexQuiz].answers[i+1].value}}</button>
+    </div>
+
+  </div>
+  <div *ngIf="!isEnd()" class="next-question-btn">
+    <button type="button" class="col btn btn-info" style="padding: 20px 10px; height: 1cm; width: 5cm; text-align: center;" (click)="increment()">suivant</button>
+  </div>
+  <div class="answers-indicator">
+    <div *ngFor="let answer of quiz.questions"></div>
+  </div>
+</div>
+
+<div *ngIf="isEnd()" class='result-box costum-box'>
+  <h1>Recapitulatif des reponses</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Question</th>
+      <th scope="col">Reponse selectionnée</th>
+      <th scope="col">Reponse correcte</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let question of quiz.questions; let q=index;">
+      <td scope="row">{{ question.label }}</td>
+      <td>{{ selectedAnswer.get(q) }}</td>
+      <td>{{correctTable[q]}}</td>>
+    </tr>
+    </tbody>
+  </table>
+  <div [routerLink]="['/quiz-list']" (click)="validate()">
+    <button type="button" class="btn" (click)="increment()">retour</button>
+  </div>
+</div>
+
+<div *ngIf="isEnd()" class='result-box costum-box'>
+  <h1>Quiz Result</h1>
+  <table>
+    <tr>
+      <td>Total Question</td>
+      <td><span class="total-question">{{quiz.questions.length}}</span></td>
+    </tr>
+    <tr>
+      <td>Correcte</td>
+      <td><span class="total-correct">{{finalResult}}</span></td>
+    </tr>
+    <tr>
+      <td>Pourcentage</td>
+      <td><span class="percentage">{{pourcentage}}%</span></td>
+    </tr>
+    <tr>
+      <td>Votre score total</td>
+      <td><span class="total-score">{{finalResult}}/{{quiz.questions.length}}</span></td>
+    </tr>
+    <tr>
+      <td>Miss Click</td>
+      <td><span class="total-score">{{missClick}}</span></td>
+    </tr>
+  </table>
+  <div [routerLink]="['/quiz-list']" (click)="validate()">
+    <button type="button" class="btn" (click)="increment()">retour</button>
+  </div>
+</div>

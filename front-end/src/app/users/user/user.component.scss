@@ -1,0 +1,33 @@
+.uContainer {
+  background-color: whitesmoke;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.image {
+  text-align: center;
+}
+
+img {
+  width: auto;
+  height: 100px;
+  object-fit: contain;
+}
+
+.nameContainer {
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+}
+.button-card {
+  width: 50%;
+  border-radius: 20px;
+}

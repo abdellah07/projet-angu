@@ -1,0 +1,3 @@
+<div  class="theme">
+    <app-quiz [quiz]="quiz" *ngFor="let quiz of quizs" (quizSelected)="quizSelected($event)" (deleteQuiz)="deleteQuiz($event)" (editQuiz)="editQuiz($event)"></app-quiz>
+</div>

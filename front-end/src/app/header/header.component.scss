@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  background-color:#007373;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.logo{
+  border-left-color: rgb(15, 54, 228);
+  border-left-style: solid;
+  border-left-width: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 34px;
+  padding-left: 10px;
+  text-align: left;
+  text-decoration: none;
+  text-size-adjust: 100%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px rgb(15, 54, 228);
+}
+
+.logo2{
+  max-height: 34px;
+}
+
+nav>div{
+  padding: 10px 100px;
+}
+
+
+.nav-item .nav-link{
+  padding: 0 8px 10px 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-align: left;
+  text-size-adjust: 100%;
+  transition: 0.5s all ease 0s;
+  white-space: nowrap;
+  color:blue;
+}
+
+
+.menu>div>ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+  text-decoration: underline;
+  color: #ccc;
+}
+
+.nav-link{
+  cursor : url(../../assets/cursor/link-select.cur),auto;
+}

@@ -1,0 +1,42 @@
+<div class="haha">
+
+
+<div class="card">
+  <h2>Créer une nouvelle question</h2>
+  <form class="quiz-form" [formGroup]="questionForm">
+    <label for="label">
+      titre <br>
+      <input class="input-custom" type="text" id="label" [formControlName]="'label'">
+    </label>
+    <br>
+    <div class="col-lg-auto text-center mt-lg-1">
+      <label for="image">Url image</label>
+      <input class="input-custom" type="text" id="image" [formControlName]="'image'" placeholder="http://...">
+    </div>
+    <br>
+    <button class="button-card" (click)="addAnswer()">Ajouter question</button>
+    <div class="answer" formArrayName="answers">
+      <div *ngFor="let address of answers.controls; let i=index">
+        <div class="answer-form" [formGroupName]="i">
+          <label>
+            Réponse
+            <input type="text" [formControlName]="'value'">
+            <br>
+            Choix correct
+            <input type="checkbox" [formControlName]="'isCorrect'">
+          </label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="button-card" (click)="addQuestion()">Créer</button>
+  </form>
+</div>
+
+<div style="text-align: center;">
+  <img src="http://tigc.ma/pic/test.jpg" style="padding: 1cm; border-radius: 20;" alt="image test">
+</div>
+
+</div>
+
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{quizForm.getRawValue() | json}} -->

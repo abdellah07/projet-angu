@@ -1,0 +1,21 @@
+
+  <div class="card" *ngIf="isAdmin()">
+    <h2 style="color: teal;">Créer un nouveau quiz</h2>
+    <form class="quiz-form" [formGroup]="quizForm">
+      <div class="form-group">
+        <label for="title">Titre</label>
+        <input [formControlName]="'name'" type="text" class="form-control" id="title"  placeholder="Entrer un titre ici">
+      </div>
+      <div class="form-group" >
+        <label for="title">Thème</label>
+        <input [formControlName]="'theme'" type="text" class="form-control" id="theme"  placeholder="Entrer un thème ici">
+      </div>
+      <div class="form-group" >
+        <label for="title">Url d'une image</label>
+        <input [formControlName]="'image'" type="email" class="form-control" id="image"  placeholder="http://...">
+      </div>
+      <button type="submit"  (click)="addQuiz()" class="btn btn-primary">Créer</button>
+    </form>
+  </div>
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{quizForm.getRawValue() | json}} -->

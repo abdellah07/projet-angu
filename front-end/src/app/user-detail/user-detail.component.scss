@@ -1,0 +1,154 @@
+@import "../../styles/variables.scss";
+
+.option-container:hover {
+  transform: scale(1.2); /* (150% zoom)*/
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.costum-box {
+  max-width: 1000px;
+  background-color: #ffffff;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.costum-box.hide {
+  display: none;
+}
+
+.quiz-box {
+  font-size: 18px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 25px;
+}
+
+/*
+.btn{
+  padding: 15px 45px;
+  background-color: $app-background-color;
+  color:#ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  transition: transform .2s;
+  max-width:200px;
+}
+*/
+.boubou:hover {
+  transform: scale(1.1);
+}
+.boubou {
+  width: 400px;
+  background-color: $app-background-color;
+  height: 80px;
+  padding: 15px 45px;
+  margin: 20px;
+}
+
+.quiz-box .question-number {
+  font-size: 18px;
+  color: $app-background-color;
+  font-weight: 600;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 10px;
+  line-height: 25px;
+}
+
+.quiz-box .question-image {
+  width: 50%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.center-div {
+  margin: auto 25%;
+  max-width: 1000px;
+}
+
+.quiz-box .question-text {
+  font-size: 22px;
+  color: black;
+  line-height: 28px;
+  font-weight: 400;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.quiz-box .option-container .option {
+  background-color: #cccccc;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 22px;
+  color: black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 100px;
+  width: 400px;
+  cursor: pointer;
+}
+
+.next-question-btn {
+  margin-bottom: 10px;
+}
+
+.quiz-box .answers-indicator {
+  border-top: 1px solid #cccccc;
+}
+
+.quiz-box .answers-indicator div {
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-color: #cccccc;
+  border-radius: 50%;
+  margin-right: 3px;
+  margin-top: 15px;
+}
+
+//result
+.result-box {
+  text-align: center;
+}
+
+.result-box h1 {
+  tab-size: 36px;
+  line-height: 42px;
+  color: $app-background-color;
+}
+
+.result-box table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+
+.result-box table td {
+  border: 1px solid #cccccc;
+  padding: 8px 15px;
+  font-weight: 500;
+  color: black;
+  width: 50%;
+  text-align: left;
+  font-size: 18px;
+}
+
+img {
+  height: 250px;
+  width: 200px;
+}
+
+.result-box.hide {
+  display: none;
+}
+//

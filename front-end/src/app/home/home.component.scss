@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+.home {
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.homecontent h1 {
+  color: grey;
+  font-size: 50px;
+  text-align: center;
+}
+
+.homecontent a {
+  margin-top: 10px;
+}
+
+#barContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.bar {
+  padding: 60px 100px;
+  background-color: rgb(183, 61, 231);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 1s all ease 0s;
+  font-size: 1.563rem;
+}
+
+.bar:hover {
+  color: rgb(183, 0, 255);
+  border: 2px solid rgb(183, 0, 255);
+}
+
+.profile {
+  max-width: 200px;
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+
+.users {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  grid-column-gap: 50px;
+}

@@ -1,0 +1,12 @@
+<div class="question-list" style="display: grid; grid-template-columns: auto auto auto auto auto auto; ">
+
+    <div class="question" *ngFor="let question of quiz.questions; let i = index" >
+        <!--Inputs & Output allow communication between parent & child components.-->
+        <!--More information: https://angular.io/guide/component-interaction-->
+        <app-quiz-question [question]="question"
+                            [quiz]="quiz"
+                            [compteur]="i"></app-quiz-question>
+    </div>
+  </div>
+
+  

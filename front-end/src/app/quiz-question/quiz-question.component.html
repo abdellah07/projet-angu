@@ -1,0 +1,23 @@
+<div style="margin-top: 20px; margin-left: 1cm;" [ngClass]="{ 'success': questionRemplie(), 'fail': !questionRemplie() }" >  
+  <div style="width: 3cm; height: 3cm; background-color: rgb(174, 223, 181); border-radius: 10px; position: relative;">
+    <div style="display: flex; flex-direction: column; position: absolute; left: 5%; top: 5%;">
+      <button (click)='deleteQuestion()'>
+            <span class="material-icons" style="color: red;">
+              delete
+            </span>
+      </button>
+      <button>
+        <a [routerLink]="'/edit-quiz/'+quiz.id+'/'+compteur">
+            <span class="material-icons" style="color: rgb(42, 240, 42);">
+              edit
+            </span>
+        </a>  
+      </button>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: space-around; width: 100%; height: 100%;">
+        <div style="display: flex; justify-content: space-around;">
+            <span>{{ compteur + 1 }}</span>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div style="margin: 20px;">
+<app-quiz-form></app-quiz-form>
+<div class="quiz-list">
+    <div class="quiz" *ngFor="let theme of themes;let i = index">
+        <!--Inputs & Output allow communication between parent & child components.-->
+        <!--More information: https://angular.io/guide/component-interaction
+        <app-quiz [quiz]="quiz" (quizSelected)="quizSelected($event)" (deleteQuiz)="deleteQuiz($event)" (editQuiz)="editQuiz($event)"></app-quiz>-->
+        <div class="card" style="margin-top: 30px">
+            <div class="card-body" style=" text-align: center; text-transform: uppercase;font-family: sans-serif;color:darkcyan  ;">
+               <h3 class="font-weight-bold">{{theme}}</h3> 
+            </div>
+          </div>
+        <app-theme [quizs]="getQuizzs(i)"></app-theme>
+    </div>
+</div>
+</div>

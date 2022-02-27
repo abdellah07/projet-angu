@@ -1,0 +1,28 @@
+<div class="uContainer" >
+    <div class="image">
+        <img src="../../assets/images/admin.png" alt="admin Image" *ngIf="isAdmin()" />
+        <img src="../../assets/images/parkinson.png" alt="parkinson Image" *ngIf="isParkinson()" />
+        <img src="../../assets/images/tetra.png" alt="tetra Image" *ngIf="isTetra()" />
+    </div>
+    <div class="nameContainer">
+        <span class="material-icons" *ngIf="isAdmin()">
+            admin_panel_settings
+        </span>
+        <span class="material-icons" *ngIf="!isAdmin()"> person </span>
+        <span class="text">{{ user.firstName }} {{ user.lastName }}</span>
+    </div>
+    <div >
+        <label *ngIf="isParkinson()" for="case">pourcentage d'agrandissement de la case réponse </label>
+        <input *ngIf="isParkinson()" class="form-control" type="number" [(ngModel)]="case" min="50" max="200"/>
+        <div class="d-flex justify-content-between">
+        <div>
+            <button class="btn btn-danger" style="margin:20px;" (click)="delete()">supprimer</button>
+        </div>
+        <div *ngIf="isParkinson()">
+            <button class="btn btn-primary" style="margin:20px;" (click)="update()">Update</button>
+        </div>
+        <div *ngIf="!isAdmin()">
+            <button class="btn btn-primary" style="margin:20px;" [routerLink]="'/user/'+user.id">Detail</button>
+        </div>
+    </div>
+</div>
